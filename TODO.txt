@@ -1,0 +1,4 @@
+- Add interfaces for :
+      ° Administration ( Servers config, state, users, ... )
+      ° Annonymous users ( Currently playing, listen to music, view playlist )
+      ° Autorised users  ( Control assigned Mpd server )
