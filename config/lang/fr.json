@@ -1,0 +1,19 @@
+{
+  "fullLanguageName" : "French",
+  "install":{
+    "index" :{
+      "welcome" : "Bienvenue ! <br> Ce projet, vous offira la possibilité de controller un ou plusieurs serveur MPD distant ou locaux. <br> L'installation et configuration de l'interface ne prend que quelques minutes. <br> Pour commencer choissez votre langue puis cliquez sur le boutton suivant."
+    },
+    "commons":
+    {
+      "installation" : "Installation"
+    }
+  },
+  "commons" :{
+    "btn" : {
+      "valid" : "Valider",
+      "next" : "Suivant",
+      "previous" : "Précédant"
+    }
+  }
+}

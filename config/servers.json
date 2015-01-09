@@ -1,0 +1,6 @@
+{
+  "name": "default",
+  "host" : "localhost",
+  "port" : "6600",
+  "password" : "pass"
+}
