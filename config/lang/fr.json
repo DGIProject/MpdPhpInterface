@@ -1,12 +1,37 @@
 {
-  "fullLanguageName" : "French",
+  "fullLanguageName" : ["French","fr"],
   "install":{
     "index" :{
-      "welcome" : "Bienvenue ! <br> Ce projet, vous offira la possibilité de controller un ou plusieurs serveur MPD distant ou locaux. <br> L'installation et configuration de l'interface ne prend que quelques minutes. <br> Pour commencer choissez votre langue puis cliquez sur le boutton suivant."
+      "welcome" : "Bienvenue ! <br> Ce projet, vous offira la possibilité de controller un ou plusieurs serveur MPD distant ou locaux. <br> L'installation et configuration de l'interface ne prend que quelques minutes. <br> Pour commencer choissez votre langue puis cliquez sur le boutton suivant.",
+      "form":{
+        "language" : "Language"
+      }
+    },
+    "step1":    {
+      "beforForm" : "Pour continuer l'installation du projet, vous devez définir un utilisateur qui sera administrateur",
+      "form":{
+        "username" : "Nom d'utilisateur",
+        "password" : "Mot de passe"
+      }
+    },
+    "step2":    {
+      "beforForm" : "Enfin pour terminer cette installation vous devez ajouter un premier serveur MPD",
+      "form":{
+        "name" : "Nom",
+        "port" : "Port",
+        "hostName" : "Nom d'hôte",
+        "password" : "Mot de passe",
+        "testCo" : "Tester la connexion",
+        "errorCo" : "Impossible de se connecter au serveur MPD !"
+      }
     },
     "commons":
     {
       "installation" : "Installation"
+    },
+    "step3" :{
+      "end": "Merci d'utiliser notre système. Nous espérons que vous serez satisfait de ce qu'il propose.<br> dans le cas ou vous rencontrerez une erreur, n'hésitez pas a nous contacter via github. <br> Si vous avez les capacité de contribuer au projet, toute aide est la bienvenue !<br> Enfin, l'installation c'est parfaitement déroulé, nous vous invitons à aller faire une tour dans l'espace admin",
+      "adminBtn" : "Connexion administrateur"
     }
   },
   "commons" :{

@@ -6,17 +6,11 @@
  * Time: 20:40
  */
 session_start();
-$_SESSION['lang'] = "fr";
 
 
 include_once("model/commons/globalConfig.php");
 include_once("model/commons/lang.php");
-include_once("model/commons/include.php");
 
 $CURRENT_CONFIG = getGlobalConfig();
-$CURRENT_LANG = getLang($_SESSION['lang']);
+$CURRENT_LANG = getLang($CURRENT_CONFIG->lang);
 
-if ($CURRENT_CONFIG->isInstalled == "false")
-{
-   include_once("controller/install/index.php");
-}
