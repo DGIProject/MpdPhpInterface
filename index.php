@@ -7,3 +7,18 @@
  */
 
 include_once("controller/commons/config.php");
+
+if (isset($_GET['type']) && $_GET['type'] == "install")
+{
+    include_once("controller/install/index.php");
+}
+else{
+    if ($CURRENT_CONFIG->isInstalled == "false")
+    {
+        include_once("controller/install/index.php");
+    }
+    else
+    {
+        include_once("controller/Standard/index.php");
+    }
+}

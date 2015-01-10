@@ -1,6 +1,1 @@
-{
-  "name": "default",
-  "host" : "localhost",
-  "port" : "6600",
-  "password" : "pass"
-}
+{"hostName":"localhost","password":"","port":"6600","name":null}

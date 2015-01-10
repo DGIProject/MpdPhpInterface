@@ -15,7 +15,9 @@ function getGlobalConfig()
 
 
 
-function editConfig($tag, $value)
+function updateConfig()
 {
-
+    global $CURRENT_CONFIG;
+    $json = json_encode($CURRENT_CONFIG);
+    file_put_contents("config/globalConfig.json",$json);
 }
