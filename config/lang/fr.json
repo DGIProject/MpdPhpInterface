@@ -32,6 +32,17 @@
     "step3" :{
       "end": "Merci d'utiliser notre système. Nous espérons que vous serez satisfait de ce qu'il propose.<br> dans le cas ou vous rencontrerez une erreur, n'hésitez pas a nous contacter via github. <br> Si vous avez les capacité de contribuer au projet, toute aide est la bienvenue !<br> Enfin, l'installation c'est parfaitement déroulé, nous vous invitons à aller faire une tour dans l'espace admin",
       "adminBtn" : "Connexion administrateur"
+    },
+    "installed" : {
+      "message": "l'installation est déjà terminé ! <br> Il n'est plus possible de refaire une installation du projet. Pour modifier des parramettre, utilisez l'interface administrateurs !<br><br>"
+    }
+  },
+  "admin":{
+    "login":{
+      "username": "Nom d'utilisateur",
+      "password": "Mot de passe",
+      "loginText" : "Connexion Administrateur",
+      "errorCo" : "Identifiants incorects"
     }
   },
   "commons" :{

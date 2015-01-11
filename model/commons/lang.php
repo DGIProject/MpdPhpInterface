@@ -9,7 +9,7 @@ function getLang($lang)
 {
     $configFileContent = file_get_contents("config/lang/$lang.json");
 
-    return json_decode($configFileContent);
+    return json_decode($configFileContent, false);
 }
 
 function translate($pageContent)
