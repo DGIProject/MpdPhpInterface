@@ -6,4 +6,8 @@
  * Time: 10:05
  */
 
+include_once("model/admin/index.php");
 
+$serversList = getServers();
+
+include("data://text/plain,".urlencode(translate(file_get_contents("view/admin/index.php"))));

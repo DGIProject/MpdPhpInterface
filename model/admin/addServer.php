@@ -2,9 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: Guillaume
- * Date: 10/01/2015
- * Time: 21:31
+ * Date: 16/01/2015
+ * Time: 16:21
  */
+
 use Web10Mpc\Mpd;
 
 function autoLoadClass($className) {
@@ -27,7 +28,7 @@ function checkServer($host, $pass = NULL, $port = 6600){
 
 function addServer($name,$host, $pass, $port)
 {
-
-    $server = array(array("hostName" => $host, "password" => $pass, "port" => $port, "name" => $name));
-    file_put_contents("config/servers.json", json_encode($server));
+    $currentServers = json_decode(file_get_contents("config/servers.json"),true);
+    $currentServers[] = array("hostName" => $host, "password" => $pass, "port" => $port, "name" => $name);
+    file_put_contents("config/servers.json", json_encode($currentServers));
 }

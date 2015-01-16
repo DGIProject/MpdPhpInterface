@@ -1,1 +1,8 @@
-{"hostName":"localhost","password":"","port":"6600","name":"OnlineCloud"}
+[
+  {
+    "hostName": "localhost",
+    "password": "",
+    "port": "6600",
+    "name": "Test"
+  }
+]

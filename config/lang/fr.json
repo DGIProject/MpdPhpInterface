@@ -49,7 +49,8 @@
     "btn" : {
       "valid" : "Valider",
       "next" : "Suivant",
-      "previous" : "Précédant"
+      "previous" : "Précédant",
+      "cancel" : "Annuler"
     }
   }
 }

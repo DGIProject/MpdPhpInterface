@@ -14,5 +14,12 @@ if (!isset($_SESSION['user']))
 }
 else
 {
-    include_once("controller/admin/index.php");
+    if (isset($_GET['type']) && $_GET['type'] == "addServer")
+    {
+        include_once("controller/admin/addServer.php");
+    }
+    else
+    {
+        include_once("controller/admin/index.php");
+    }
 }

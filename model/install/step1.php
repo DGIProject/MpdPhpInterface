@@ -8,7 +8,7 @@
 
 function addAdmin($username, $password)
 {
-    $user = array("username" => $username, "password" => sha1($password), "class" => 0);
+    $user = array(array("username" => $username, "password" => sha1($password), "class" => 0));
     $user = json_encode($user);
     return file_put_contents("config/users.json",$user);
 }
