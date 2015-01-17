@@ -42,15 +42,19 @@
                 <div class="col-md-2">
                     <ul class="nav nav-pills nav-stacked">
                         <li> Liste des serveurs</li>
+                    </ul>
+                    <ul id="serverList" class="nav nav-pills nav-stacked">
                         <?php
+                        $i=0;
                         foreach ($serversList as $server)
                         {
-                            echo "<li><a href='#'>".$server['name']."</a></li>";
+                            echo "<li id='li_$i'><a href='#' id='server_$i' onclick='getStatus($i)'>".$server['name']."</a></li>";
+                            $i++;
                         }
                         ?>
                     </ul>
                     <hr>
-                    <button type="button" class="btn btn-success btn-sm">Create</button>
+                    <a href="?type=addServer" class="btn btn-success btn-sm">Create</a>
                 </div>
                 <div class="col-md-10">
                     <nav class="navbar navbar-default">
@@ -62,7 +66,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="#">Test</a>
+                                <a id="StatusNameServer" class="navbar-brand" href="#">Test</a>
                             </div>
                             <div class="collapse navbar-collapse text-right">
                                 <button type="button" id="buttonAddMusic" class="btn btn-primary navbar-btn" data-toggle="popover" data-placement="bottom" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><span class="glyphicon glyphicon-plus"></span> Add Music</button>
@@ -78,56 +82,16 @@
                             </div>
                         </div>
                     </nav>
-                    <div class="panel panel-default">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Album</th>
-                                <th>Like</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Music 1</td>
-                                <td>Album 1</td>
-                                <td>
-                                    <span class="label label-default">0</span>
-                                    <button type="button" class="btn btn-success btn-xs" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <span class="glyphicon glyphicon-thumbs-up"
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Music 2</td>
-                                <td>Album 1</td>
-                                <td>
-                                    <span class="label label-default">0</span>
-                                    <button type="button" class="btn btn-success btn-xs" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <span class="glyphicon glyphicon-thumbs-up"
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Music 3</td>
-                                <td>Album 1</td>
-                                <td>
-                                    <span class="label label-default">0</span>
-                                    <button type="button" class="btn btn-success btn-xs" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <span class="glyphicon glyphicon-thumbs-up"
-                                    </button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <div class="jumbotron">
+                            <h3>{admin.index.state}</h3>
+
+                            <div id="contentInfoServer">
+
+                            </div>
+                        </div>
+                        <div class="alert alert-info" style="display: none;">Oops ! There is nothing here</div>
                 </div>
             </div>
-            <div class="alert alert-info" style="display: none;">Oops ! There is not playlist here, <a href="#">create one.</a></div>
         </div>
     </div>
 </div><!-- /.container -->
@@ -135,7 +99,7 @@
 <script src="view/commons/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-    window.onload = function() {
+    /*window.onload = function() {
         //$('#buttonAddMusic').popover('show');
     };
 
@@ -147,7 +111,8 @@
 
     $('#buttonAddMusic').on('shown.bs.popover', function () {
         console.log('ok');
-    });
+    });*/
 </script>
+<script src="view/admin/js/index.js"></script>
 </body>
 </html>

@@ -43,6 +43,9 @@
       "password": "Mot de passe",
       "loginText" : "Connexion Administrateur",
       "errorCo" : "Identifiants incorects"
+    },
+    "index" : {
+      "state" : "Etat actuel du serveur"
     }
   },
   "commons" :{
@@ -52,5 +55,45 @@
       "previous" : "Précédant",
       "cancel" : "Annuler"
     }
+  },
+  "mdp":{
+    "artists": "Nombre d'artistes",
+    "albums": "Nombre d'albums",
+    "songs": "Nombre de pistes",
+    "uptime": "Serveur lancé depuis",
+    "db_playtime": "Temps total de lecture",
+    "db_update": "Mise a jour de la base de données",
+    "playtime": "Durée total de lecture",
+    "volume": "Volume",
+    "repeat": "Répétition",
+    "random": "Lecture aléatoire",
+    "single": "single",
+    "consume": "consume",
+    "playlist": "Version de la playlist",
+    "playlistlength": "Nombre de pistes dans la playlist",
+    "state": "Etat",
+    "song": "Numéro de piste dans la playlist",
+    "songid": "Identifiant de la piste actuellement a l'écoute",
+    "nextsong": "Identifiant de la piste suivante ( dans la playlist actuelle )",
+    "nextsongid": "Identifiant de la piste suivante",
+    "time": "Durée écoulé",
+    "elapsed": "Durée ecoulée",
+    "duration": "Durée de la piste actuelle ( en s)",
+    "bitrate": "Bitrate instantané",
+    "xfade": "Durée du fondu entre les pistes",
+    "mixrampdb": "mixramp threshold in dB",
+    "mixrampdelay": "mixrampdelay in seconds",
+    "audio": "Flux audio",
+    "updating_db": "Mise a jour de la Base",
+    "error": "Dernière erreur",
+    "true" : "activé",
+    "false" : "désactivé",
+    "unknown" : "Inconnu",
+    "seconds" : "seconde(s)",
+    "hours" : "heure(s)",
+    "minutes" : "minute(s)",
+    "days" : "jour(s)",
+    "month" : "mois",
+    "years" : "année(s)"
   }
 }

@@ -1,0 +1,41 @@
+{
+  "TYPE": {
+    "STRING": 0,
+    "TIME": 1,
+    "INT": 2,
+    "BOOL": 3,
+    "TIMESTAMP" :4
+  },
+  "data": {
+    "artists": 2,
+    "albums": 2,
+    "songs": 2,
+    "uptime": 1,
+    "db_playtime": 1,
+    "db_update": 4,
+    "playtime": 1,
+    "volume": 2,
+    "repeat": 3,
+    "random": 3,
+    "single": 3,
+    "consume": 3,
+    "playlist": 0,
+    "playlistlength": 2,
+    "state": 0,
+    "song": 2,
+    "songid": 2,
+    "nextsong": 2,
+    "nextsongid": 2,
+    "time": 1,
+    "elapsed": 1,
+    "duration": 1,
+    "bitrate": 2,
+    "xfade": 1,
+    "mixrampdb": 0,
+    "mixrampdelay": 0,
+    "audio": 0,
+    "updating_db": 0,
+    "error": 0
+  }
+}
+
