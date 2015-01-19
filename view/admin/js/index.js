@@ -128,9 +128,26 @@ function getStatus(id ){
     getServerInfos(id, 'status');
     getServerInfos(id, 'stats');
 }
+var sendCommand =function(comamnd)
+{
+    console.log("command Was", comamnd.target.dataset.command, comamnd.target.value);
+    //TODO: Send controls commands
+};
 
 window.onload = function(){
     getLangArray();
     getTypes();
     getStatus(0);
+
+    $(".mpd-controls-click").each(function(index, value) {
+        console.log(index, $(this));
+        $(this).click(sendCommand) ;
+
+    });
+
+    $(".mpd-controls-change").each(function(index, value) {
+        console.log(index, $(this));
+        $(this).change(sendCommand) ;
+
+    });
 }

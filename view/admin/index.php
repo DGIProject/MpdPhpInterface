@@ -69,6 +69,17 @@
                                 <a id="StatusNameServer" class="navbar-brand" href="#">Test</a>
                             </div>
                             <div class="collapse navbar-collapse text-right">
+                                <form class="navbar-form navbar-left">
+                                    <button type="button" id="mpd_play" data-command="play" class="btn mpd-controls-click"><span class="glyphicon glyphicon-play"></span></button>
+                                    <button type="button" id="mpd_stop" data-command="stop" class="btn mpd-controls-click"><span class="glyphicon glyphicon-stop"></span></button>
+                                    <button type="button" id="mpd_previous" data-command="previous" class="btn mpd-controls-click"><span class="glyphicon glyphicon-backward"></span></button>
+                                    <div class="form-group">
+                                        <div class="form-group col-sm-2"><input style="display: inline-block" data-command="seekcur" type="range" class="form-control mpd-controls-change" max="100" min="0"/></div>
+                                    </div>
+                                    <button type="button" id="mpd_next" data-command="next" class="btn mpd-controls-click"><span class="glyphicon glyphicon-forward"></span></button>
+                                </form>
+
+
                                 <button type="button" id="buttonAddMusic" class="btn btn-primary navbar-btn" data-toggle="popover" data-placement="bottom" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><span class="glyphicon glyphicon-plus"></span> Add Music</button>
                                 <button type="button" class="btn btn-info navbar-btn"><span class="glyphicon glyphicon-share"></span></button>
                                 <div class="btn-group navbar-btn" data-toggle="buttons">
@@ -83,10 +94,84 @@
                         </div>
                     </nav>
                         <div class="jumbotron">
-                            <h3>{admin.index.state}</h3>
 
-                            <div id="contentInfoServer">
+                            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#status" id="status-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="false">{admin.index.status}</a></li>
+                                <li role="presentation"><a aria-expanded="true" href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">{admin.index.settings}</a></li>
 
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active in" id="status" aria-labelledby="home-tab">
+                                    <h3>{admin.index.state}</h3>
+
+                                    <div id="contentInfoServer">
+
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+                                    <br/>
+                                    <form onsubmit="return false;" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="mpd_consume" class="col-sm-4 control-label">{mpd.consume}</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control mpd-controls-change" data-command="consume" type="checkbox" id="mpd_consume" name="mpd_consume"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mpd_crossfade" class="col-sm-4 control-label">{mpd.xfade}</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" class="form-control mpd-controls-change" data-command="crossfade" id="mpd_crossfade" name="mpd_crossfade"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mpd_mixrampdb" class="col-sm-4 control-label">{mpd.mixrampdb}</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" class="form-control mpd-controls-change" data-command="mixrampdb" id="mpd_mixrampdb" name="mpd_mixrampdb"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mpd_mixrampdelay" class="col-sm-4 control-label">{mpd.mixrampdelay}</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" class="form-control mpd-controls-change" data-command="mixrampdelay" id="mpd_mixrampdelay" name="mpd_mixrampdelay"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mpd_random" class="col-sm-4 control-label">{mpd.random}</label>
+                                            <div class="col-sm-8">
+                                                <input type="checkbox" class="form-control mpd-controls-change" data-command="random" id="mpd_random" name="mpd_random"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mpd_repeat" class="col-sm-4 control-label">{mpd.repeat}</label>
+                                            <div class="col-sm-8">
+                                                <input type="checkbox" class="form-control mpd-controls-change" data-command="repeat" id="mpd_repeat" name="mpd_repeat"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mpd_setvol" class="col-sm-4 control-label">{mpd.volume}</label>
+                                            <div class="col-sm-8">
+                                                <input type="range" class="form-control mpd-controls-change" data-command="setvol" min="-1" max="100" id="mpd_setvol" name="mpd_setvol"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mpd_single" class="col-sm-4 control-label">{mpd.single}</label>
+                                            <div class="col-sm-8">
+                                                <input type="checkbox" class="form-control mpd-controls-change" data-command="single" id="mpd_single" name="mpd_single"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mpd_replay_gain_mode" class="col-sm-4 control-label">{mpd.single}</label>
+                                            <div class="col-sm-8">
+                                                <select name="mpd_replay_gain_mode" class="form-control mpd-controls-change" data-command="replay_gain_mode" id="mpd_replay_gain_mode">
+                                                    <option value="0">Off</option>
+                                                    <option value="1">Track</option>
+                                                    <option value="2">Album</option>
+                                                    <option value="3">Auto</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="alert alert-info" style="display: none;">Oops ! There is nothing here</div>
