@@ -15,7 +15,7 @@ if (isset($_GET['action']) && $_GET['action'] == "getServerInfo")
 }
 else if (isset($_GET['action']) && $_GET['action'] == "getLang")
 {
-    echo json_encode($CURRENT_LANG->mdp);
+    echo json_encode($CURRENT_LANG->mpd);
     exit(0);
 }
 else if (isset($_GET['action']) && $_GET['action'] == "getTypes")

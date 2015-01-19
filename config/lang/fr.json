@@ -45,7 +45,9 @@
       "errorCo" : "Identifiants incorects"
     },
     "index" : {
-      "state" : "Etat actuel du serveur"
+      "state" : "Etat actuel du serveur",
+      "status" : "Status",
+      "settings" : "Paramètres"
     }
   },
   "commons" :{
@@ -56,7 +58,7 @@
       "cancel" : "Annuler"
     }
   },
-  "mdp":{
+  "mpd":{
     "artists": "Nombre d'artistes",
     "albums": "Nombre d'albums",
     "songs": "Nombre de pistes",
@@ -67,8 +69,8 @@
     "volume": "Volume",
     "repeat": "Répétition",
     "random": "Lecture aléatoire",
-    "single": "single",
-    "consume": "consume",
+    "single": "Stoper la lecture après la piste en cours",
+    "consume": "Suprimer la piste de la après être joué",
     "playlist": "Version de la playlist",
     "playlistlength": "Nombre de pistes dans la playlist",
     "state": "Etat",
@@ -80,7 +82,7 @@
     "elapsed": "Durée ecoulée",
     "duration": "Durée de la piste actuelle ( en s)",
     "bitrate": "Bitrate instantané",
-    "xfade": "Durée du fondu entre les pistes",
+    "xfade": "Durée du fondu entre les pistes (en s)",
     "mixrampdb": "mixramp threshold in dB",
     "mixrampdelay": "mixrampdelay in seconds",
     "audio": "Flux audio",
