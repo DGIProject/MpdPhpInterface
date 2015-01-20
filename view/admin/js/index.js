@@ -153,7 +153,8 @@ var sendCommand = function(comamnd){
     }
 
     OAjax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-    OAjax.send('serverId='+document.serverId+'&command='+comamnd.target.dataset.command+"&args="+comamnd.target.value);};
+    OAjax.send('serverId='+document.serverId+'&command='+comamnd.target.dataset.command+"&args="+comamnd.target.value);
+};
 
 window.onload = function(){
     getLangArray();

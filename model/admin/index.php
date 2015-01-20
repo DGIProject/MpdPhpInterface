@@ -41,7 +41,7 @@ function executeCommand($id,$command, $argv)
     try {
         $mpd = new Mpd\Mpd("$host", $port, $pass );
         $mpd->connect();
-        $response = $mpd->executeCommand("$command");
+        $response = $mpd->executeCommand("$command", "$argv");
         $mpd->disconnect();
     } catch (\Exception $ex) {
         return array("code" => -1, "data" => $ex->__toString());

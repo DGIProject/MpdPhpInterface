@@ -78,7 +78,7 @@
     "songid": "Identifiant de la piste actuellement a l'écoute",
     "nextsong": "Identifiant de la piste suivante ( dans la playlist actuelle )",
     "nextsongid": "Identifiant de la piste suivante",
-    "time": "Durée écoulé",
+    "time": "Avencement temporaire",
     "elapsed": "Durée ecoulée",
     "duration": "Durée de la piste actuelle ( en s)",
     "bitrate": "Bitrate instantané",
