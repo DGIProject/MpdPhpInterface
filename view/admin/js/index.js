@@ -116,6 +116,7 @@ function getTime(time){
 }
 function getStatus(id ){
 
+    document.serverId = id;
     var lis = document.getElementById("serverList").getElementsByTagName("li");
     console.log(lis);
     for (i=0; i<lis.length;i++) {
@@ -128,11 +129,31 @@ function getStatus(id ){
     getServerInfos(id, 'status');
     getServerInfos(id, 'stats');
 }
-var sendCommand =function(comamnd)
-{
+var sendCommand = function(comamnd){
     console.log("command Was", comamnd.target.dataset.command, comamnd.target.value);
-    //TODO: Send controls commands
-};
+    var OAjax;
+    if (window.XMLHttpRequest) OAjax = new XMLHttpRequest();
+    else if (window.ActiveXObject) OAjax = new ActiveXObject('Microsoft.XMLHTTP');
+    OAjax.open('POST',"admin.php?action=command", true);
+    OAjax.onreadystatechange = function()
+    {
+        if (OAjax.readyState == 4 && OAjax.status == 200)
+        {
+            console.log(OAjax.responseText);
+            jsonRep = JSON.parse(OAjax.responseText);
+            if (jsonRep.code == 0)
+            {
+                console.log(jsonRep.data);
+            }
+            else
+            {
+
+            }
+        }
+    }
+
+    OAjax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    OAjax.send('serverId='+document.serverId+'&command='+comamnd.target.dataset.command+"&args="+comamnd.target.value);};
 
 window.onload = function(){
     getLangArray();

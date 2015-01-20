@@ -8,7 +8,7 @@
 
 include_once("model/admin/index.php");
 
-if (isset($_GET['action']) && $_GET['action'] == "getServerInfo")
+if (isset($_GET['action']) && $_GET['action'] == "getServerInfo" && isset($_POST['cmd']))
 {
     echo json_encode(getServerStats($_POST['id'], $_POST['cmd']));
     exit(0);
@@ -21,6 +21,11 @@ else if (isset($_GET['action']) && $_GET['action'] == "getLang")
 else if (isset($_GET['action']) && $_GET['action'] == "getTypes")
 {
     echo file_get_contents("config/mpdTypes.json");
+    exit(0);
+}
+else if (isset($_GET['action']) && $_GET['action'] == "command" && isset($_POST['serverId']))
+{
+    echo json_encode(executeCommand($_POST['serverId'],$_POST['command'], $_POST['args']));
     exit(0);
 }
 $serversList = getServers();

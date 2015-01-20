@@ -26,6 +26,29 @@ function getServerById($id)
     return $list[$id];
 }
 
+function executeCommand($id,$command, $argv)
+{
+    $ids = getServerById($id);
+    $host = $ids['hostName'];
+    $port = $ids['port'];
+    $pass = $ids['password'];
+
+    if ($pass == '')
+    {
+        $pass = NULL;
+    }
+
+    try {
+        $mpd = new Mpd\Mpd("$host", $port, $pass );
+        $mpd->connect();
+        $response = $mpd->executeCommand("$command");
+        $mpd->disconnect();
+    } catch (\Exception $ex) {
+        return array("code" => -1, "data" => $ex->__toString());
+    }
+    return array("code" => 0, "data" => $response);
+}
+
 function getServerStats($id, $cmd)
 {
     $ids = getServerById($id);
